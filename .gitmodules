@@ -1,0 +1,3 @@
+[submodule "livelua"]
+	path = livelua
+	url = https://github.com/Kingdaro/livelua
