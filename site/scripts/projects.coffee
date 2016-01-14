@@ -1,4 +1,4 @@
-# out: projects.js
+# out: projects.js, sourcemap: true
 
 selector = (str) -> document.body.querySelector str
 
@@ -6,14 +6,6 @@ projects = [
   {
     name: 'crescent'
     description: 'a cli for moonscript'
-  }
-  {
-    name: 'image-board'
-    description: 'a board that displays images'
-  }
-  {
-    name: 'blog'
-    description: 'a place where i write things'
   }
 ]
 

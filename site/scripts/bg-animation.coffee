@@ -18,7 +18,7 @@ window.addEventListener 'load', ->
 
   newOrb = ->
     orbs.push
-      x: window.innerWidth
+      x: window.innerWidth + 100
       y: Math.random() * window.innerHeight
       size: Math.random() + 0.2
 
@@ -50,7 +50,7 @@ window.addEventListener 'load', ->
     delta = (Date.now() - currentTime) * 0.001
     currentTime = Date.now()
 
-    update delta
+    update delta if document.hasFocus()
     draw()
 
     window.requestAnimationFrame animationLoop

@@ -13,7 +13,7 @@
     canvas.fillStyle = 'rgba(255, 255, 255, 0.02)';
     newOrb = function() {
       orbs.push({
-        x: window.innerWidth,
+        x: window.innerWidth + 100,
         y: Math.random() * window.innerHeight,
         size: Math.random() + 0.2
       });
@@ -45,7 +45,9 @@
       var delta;
       delta = (Date.now() - currentTime) * 0.001;
       currentTime = Date.now();
-      update(delta);
+      if (document.hasFocus()) {
+        update(delta);
+      }
       draw();
       window.requestAnimationFrame(animationLoop);
     };

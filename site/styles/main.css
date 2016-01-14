@@ -95,3 +95,12 @@ hr {
   bottom: 0;
   top: 0;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #161616;
+}
