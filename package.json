@@ -2,19 +2,6 @@
   "name": "kingdaro.github.io",
   "version": "1.0.0",
   "description": "kingdaro's website thing",
-  "scripts": {
-    "coffee:compile": "coffee -c site/scripts",
-    "coffee:watch": "coffee -w -c site/scripts",
-
-    "stylus:compile": "stylus site/styles",
-    "stylus:watch": "stylus -w site/styles",
-
-    "browser-sync": "browser-sync start --server --files='*.html, site/styles/*.css, site/scripts/*.js'",
-
-    "compile": " npm run stylus:compile && npm run coffee:compile",
-    "watch": "start npm run stylus:watch && start npm run coffee:watch",
-    "server": "start npm run browser-sync && start npm run watch"
-  },
   "devDependencies": {
     "coffee-script": "latest",
     "stylus": "latest",
