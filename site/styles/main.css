@@ -159,3 +159,11 @@ hr {
 ::-webkit-scrollbar-thumb {
   background: #161616;
 }
+::-moz-selection {
+  background-color: rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+::selection {
+  background-color: rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+}

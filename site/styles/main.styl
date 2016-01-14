@@ -74,6 +74,7 @@ hr
     .hover-title
       pointer-events: none
 
+      // center overflowing text - why does this work???????
       white-space: nowrap
       margin-left: -100%
       margin-right: -100%
@@ -155,3 +156,11 @@ hr
 
   &-thumb
     background: lighten(color-primary, 5%)
+
+::-moz-selection
+  background-color: rgba(white, 0.1)
+  border-bottom: 1px solid rgba(white, 0.5)
+
+::selection
+  background-color: rgba(white, 0.1)
+  border-bottom: 1px solid rgba(white, 0.5)
