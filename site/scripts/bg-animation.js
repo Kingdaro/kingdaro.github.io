@@ -6,7 +6,7 @@
     canvasElement.height = window.outerHeight;
     canvas = canvasElement.getContext('2d');
     orbs = [];
-    orbTimer = 0.3;
+    orbTimer = 0.4;
     orbStartTime = orbTimer;
     currentTime = Date.now();
     canvas.font = '16pt sans-serif';
@@ -15,12 +15,15 @@
       orbs.push({
         x: window.innerWidth + 100,
         y: Math.random() * window.innerHeight,
-        size: Math.random() + 0.2
+        size: Math.random() + 0.2,
+        offset: Math.random() * 10
       });
     };
     drawOrb = function(orb) {
+      var sineOffset;
+      sineOffset = Math.sin(currentTime / 1000 + orb.offset) * 20;
       canvas.beginPath();
-      canvas.arc(orb.x, orb.y, 80 * orb.size, 0, Math.PI * 2);
+      canvas.arc(orb.x, orb.y + sineOffset, 80 * orb.size, 0, Math.PI * 2);
       canvas.fill();
     };
     update = function(delta) {
@@ -35,7 +38,7 @@
     };
     draw = function() {
       var j, len, orb;
-      canvas.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      canvas.clearRect(0, 0, window.outerWidth, window.outerHeight);
       for (j = 0, len = orbs.length; j < len; j++) {
         orb = orbs[j];
         drawOrb(orb);
@@ -47,13 +50,14 @@
       currentTime = Date.now();
       if (document.hasFocus()) {
         update(delta);
+        draw();
       }
-      draw();
       window.requestAnimationFrame(animationLoop);
     };
     for (i = j = 1; j <= 250; i = ++j) {
       update(0.1);
     }
+    draw();
     animationLoop();
   });
 

@@ -8,7 +8,7 @@ window.addEventListener 'load', ->
   canvas = canvasElement.getContext '2d'
 
   orbs = []
-  orbTimer = 0.3
+  orbTimer = 0.4
   orbStartTime = orbTimer
 
   currentTime = Date.now()
@@ -21,12 +21,14 @@ window.addEventListener 'load', ->
       x: window.innerWidth + 100
       y: Math.random() * window.innerHeight
       size: Math.random() + 0.2
+      offset: Math.random() * 10
 
     return
 
   drawOrb = (orb) ->
+    sineOffset = Math.sin(currentTime / 1000 + orb.offset) * 20
     canvas.beginPath()
-    canvas.arc orb.x, orb.y, 80 * orb.size, 0, Math.PI * 2
+    canvas.arc orb.x, orb.y + sineOffset, 80 * orb.size, 0, Math.PI * 2
     canvas.fill()
     return
 
@@ -42,7 +44,7 @@ window.addEventListener 'load', ->
     return
 
   draw = ->
-    canvas.clearRect 0, 0, window.innerWidth, window.innerHeight
+    canvas.clearRect 0, 0, window.outerWidth, window.outerHeight
     drawOrb orb for orb in orbs
     return
 
@@ -50,8 +52,9 @@ window.addEventListener 'load', ->
     delta = (Date.now() - currentTime) * 0.001
     currentTime = Date.now()
 
-    update delta if document.hasFocus()
-    draw()
+    if document.hasFocus()
+      update delta
+      draw()
 
     window.requestAnimationFrame animationLoop
     return
@@ -59,6 +62,7 @@ window.addEventListener 'load', ->
   for i in [1..250]
     update 0.1
 
+  draw()
   animationLoop()
 
   return
