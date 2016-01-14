@@ -3,10 +3,22 @@
   "version": "1.0.0",
   "description": "kingdaro's website thing",
   "scripts": {
-    "compile:coffee": "coffee -c site/scripts",
-    "compile:stylus": "stylus site/styles",
-    "compile:jade": "jade site/templates/index.jade -o .",
-    "compile": "npm run compile:coffee && npm run compile:stylus && npm run compile:jade"
+    "coffee:compile": "coffee -c site/scripts",
+    "coffee:watch": "coffee -w -c site/scripts",
+
+    "stylus:compile": "stylus site/styles",
+    "stylus:watch": "stylus -w site/styles",
+
+    "browser-sync": "browser-sync start --server --files='*.html, site/styles/*.css, site/scripts/*.js'",
+
+    "compile": " npm run stylus:compile && npm run coffee:compile",
+    "watch": "start npm run stylus:watch && start npm run coffee:watch",
+    "server": "start npm run browser-sync && start npm run watch"
+  },
+  "devDependencies": {
+    "coffee-script": "latest",
+    "stylus": "latest",
+    "browser-sync": "latest"
   },
   "author": "Kingdaro",
   "license": "MIT"
