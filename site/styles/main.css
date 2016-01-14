@@ -38,6 +38,27 @@ hr {
   margin: auto;
   padding: 30vh 0 30vh;
 }
+.page-divide {
+  max-width: 900px;
+  margin: auto;
+}
+.social {
+  width: max-content;
+  margin: 0px auto 20px;
+}
+.social a {
+  margin: 0px 5px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  line-height: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  transition: 0.2s;
+}
+.social a:hover {
+  background-color: rgba(255,255,255,0.2);
+}
 .greeting {
   text-align: center;
 }
@@ -53,22 +74,30 @@ hr {
 .greeting h2 {
   max-width: 750px;
   font-size: 180%;
-  margin-bottom: 30px;
+  margin-bottom: 70px;
 }
 .projects {
   margin: auto;
   padding-top: 80px;
 }
 .projects .project {
+  display: block;
   max-width: 800px;
   height: 200px;
   margin: 0px auto 30px;
   position: relative;
-  transition: 0.2s;
-  display: block;
-  border-bottom: 3px solid transparent;
+  background-size: cover;
 }
-.projects .project:hover {
+.projects .project .hover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-bottom: 3px solid transparent;
+  transition: 0.2s;
+}
+.projects .project:hover .hover {
   background-color: rgba(255,255,255,0.05);
   border-bottom-color: rgba(255,255,255,0.08);
 }
@@ -94,6 +123,7 @@ hr {
   right: 0;
   bottom: 0;
   top: 0;
+  pointer-events: none;
 }
 ::-webkit-scrollbar {
   width: 10px;

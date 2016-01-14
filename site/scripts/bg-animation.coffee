@@ -2,8 +2,8 @@
 
 window.addEventListener 'load', ->
   canvasElement = document.querySelector('canvas.bg-animation')
-  canvasElement.width = window.innerWidth
-  canvasElement.height = window.innerHeight
+  canvasElement.width = window.outerWidth
+  canvasElement.height = window.outerHeight
 
   canvas = canvasElement.getContext '2d'
 

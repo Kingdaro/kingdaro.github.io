@@ -8,17 +8,19 @@
   projects = [
     {
       name: 'crescent',
-      description: 'a cli for moonscript'
+      description: 'a cli for moonscript',
+      image: 'crescent.png',
+      url: 'https://github.com/Kingdaro/crescent'
     }
   ];
 
   generateProjects = function() {
-    var description, div, i, len, name, ref, results;
+    var description, div, i, image, len, name, ref, results, url;
     div = selector('.projects');
     results = [];
     for (i = 0, len = projects.length; i < len; i++) {
-      ref = projects[i], name = ref.name, description = ref.description;
-      results.push(div.innerHTML += "<a class='project' href='#'> <div class='project-info'> <h3>" + name + "</h3><p>" + description + "</p> </div> </a>");
+      ref = projects[i], name = ref.name, description = ref.description, image = ref.image, url = ref.url;
+      results.push(div.innerHTML += "<a class='project' href='" + url + "' style='background-image: url(site/images/" + image + ")' target='_blank'> <div class='project-info'> <h3>" + name + "</h3><p>" + description + "</p> </div> <div class='hover'></div> </a>");
     }
     return results;
   };

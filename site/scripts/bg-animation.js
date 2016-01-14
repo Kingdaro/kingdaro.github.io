@@ -2,8 +2,8 @@
   window.addEventListener('load', function() {
     var animationLoop, canvas, canvasElement, currentTime, draw, drawOrb, i, j, newOrb, orbStartTime, orbTimer, orbs, update;
     canvasElement = document.querySelector('canvas.bg-animation');
-    canvasElement.width = window.innerWidth;
-    canvasElement.height = window.innerHeight;
+    canvasElement.width = window.outerWidth;
+    canvasElement.height = window.outerHeight;
     canvas = canvasElement.getContext('2d');
     orbs = [];
     orbTimer = 0.3;
