@@ -36,7 +36,15 @@ hr {
 }
 .site-content {
   margin: auto;
-  padding: 30vh 0 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 .page-divide {
   max-width: 900px;
@@ -118,11 +126,12 @@ hr {
   font-size: 70%;
 }
 .bg-animation {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
   top: 0;
+  bottom: 0;
+  position: fixed;
   pointer-events: none;
 }
 ::-webkit-scrollbar {
