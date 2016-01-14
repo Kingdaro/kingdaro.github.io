@@ -1,7 +1,7 @@
 (function() {
   var links;
 
-  links = [['GitHub', 'github', 'https://github.com/Kingdaro'], ['YouTube', 'youtube', 'https://youtube.com/Kingdaro557'], ['SoundCloud', 'soundcloud', 'https://soundcloud.com/kingdaro'], ['Twitter', 'twitter', 'https://twitter.com/KingdaroBL'], ['Tumblr', 'tumblr', 'https://kingmod-kun.tumblr.com']];
+  links = [['GitHub', 'github', 'https://github.com/Kingdaro'], ['Twitter', 'twitter', 'https://twitter.com/KingdaroBL'], ['SoundCloud', 'soundcloud', 'https://soundcloud.com/kingdaro'], ['YouTube', 'youtube', 'https://youtube.com/Kingdaro557'], ['Tumblr', 'tumblr', 'https://kingmod-kun.tumblr.com']];
 
   window.addEventListener('load', function() {
     var element, hoverTitle, i, icon, iconClass, len, link, ref, results, title, url;

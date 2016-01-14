@@ -3,9 +3,9 @@
 links = [
   # [ name, fa icon, url ]
   ['GitHub', 'github', 'https://github.com/Kingdaro']
-  ['YouTube', 'youtube', 'https://youtube.com/Kingdaro557']
-  ['SoundCloud', 'soundcloud', 'https://soundcloud.com/kingdaro']
   ['Twitter', 'twitter', 'https://twitter.com/KingdaroBL']
+  ['SoundCloud', 'soundcloud', 'https://soundcloud.com/kingdaro']
+  ['YouTube', 'youtube', 'https://youtube.com/Kingdaro557']
   ['Tumblr', 'tumblr', 'https://kingmod-kun.tumblr.com']
 ]
 
