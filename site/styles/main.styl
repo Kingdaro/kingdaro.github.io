@@ -65,9 +65,28 @@ hr
     line-height: size
     border-bottom: 1px solid rgba(color-secondary, 0.3)
 
+    position: relative
+
     transition: 0.2s
     &:hover
       background-color: rgba(white, 0.2)
+
+    .hover-title
+      pointer-events: none
+
+      white-space: nowrap
+      margin-left: -100%
+      margin-right: -100%
+      text-align: center
+
+      opacity: 0
+      transition: 0.3s
+      top: 10px
+      position: relative
+
+    &:hover .hover-title
+      opacity: 0.8
+      top: 0
 
 .greeting
   text-align: center

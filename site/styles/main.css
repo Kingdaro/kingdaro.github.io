@@ -62,10 +62,26 @@ hr {
   text-align: center;
   line-height: 48px;
   border-bottom: 1px solid rgba(255,255,255,0.3);
+  position: relative;
   transition: 0.2s;
 }
 .social a:hover {
   background-color: rgba(255,255,255,0.2);
+}
+.social a .hover-title {
+  pointer-events: none;
+  white-space: nowrap;
+  margin-left: -100%;
+  margin-right: -100%;
+  text-align: center;
+  opacity: 0;
+  transition: 0.3s;
+  top: 10px;
+  position: relative;
+}
+.social a:hover .hover-title {
+  opacity: 0.8;
+  top: 0;
 }
 .greeting {
   text-align: center;
