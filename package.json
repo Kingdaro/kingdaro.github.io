@@ -1,0 +1,13 @@
+{
+  "name": "kingdaro.github.io",
+  "version": "1.0.0",
+  "description": "kingdaro's website thing",
+  "scripts": {
+    "compile:coffee": "coffee -c site/scripts",
+    "compile:stylus": "stylus site/styles",
+    "compile:jade": "jade site/templates/index.jade -o .",
+    "compile": "npm run compile:coffee && npm run compile:stylus && npm run compile:jade"
+  },
+  "author": "Kingdaro",
+  "license": "MIT"
+}
