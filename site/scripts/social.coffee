@@ -1,4 +1,4 @@
-# out: social.js, sourcemap: true
+# out: social.js
 
 links = [
   # [ name, fa icon, url ]

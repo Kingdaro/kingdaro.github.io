@@ -1,4 +1,4 @@
-# out: bg-animation.js, sourcemap: true
+# out: bg-animation.js
 
 window.addEventListener 'load', ->
   canvasElement = document.querySelector('canvas.bg-animation')
@@ -23,30 +23,25 @@ window.addEventListener 'load', ->
       size: Math.random() + 0.2
       offset: Math.random() * 10
 
-    return
-
   drawOrb = (orb) ->
     sineOffset = Math.sin(currentTime / 1000 + orb.offset) * 20
     canvas.beginPath()
     canvas.arc orb.x, orb.y + sineOffset, 80 * orb.size, 0, Math.PI * 2
     canvas.fill()
-    return
 
   update = (delta) ->
-    if (orbTimer = orbTimer - delta) <= 0
-      orbTimer += orbStartTime
+    orbTimer -= delta
+    while orbTimer <= 0
+      orbTimer = orbStartTime
       newOrb()
 
     orbs = orbs.filter (orb) ->
       orb.x -= 100 * delta * orb.size
       orb.x > -100
 
-    return
-
   draw = ->
     canvas.clearRect 0, 0, window.outerWidth, window.outerHeight
     drawOrb orb for orb in orbs
-    return
 
   animationLoop = ->
     delta = (Date.now() - currentTime) * 0.001
@@ -57,12 +52,9 @@ window.addEventListener 'load', ->
       draw()
 
     window.requestAnimationFrame animationLoop
-    return
 
-  for i in [1..250]
-    update 0.1
+  while !orbs[0]? || orbs[0].x > 0
+    update 0.05
 
   draw()
   animationLoop()
-
-  return

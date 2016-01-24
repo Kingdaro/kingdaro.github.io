@@ -1,6 +1,6 @@
 (function() {
   window.addEventListener('load', function() {
-    var animationLoop, canvas, canvasElement, currentTime, draw, drawOrb, i, j, newOrb, orbStartTime, orbTimer, orbs, update;
+    var animationLoop, canvas, canvasElement, currentTime, draw, drawOrb, newOrb, orbStartTime, orbTimer, orbs, update;
     canvasElement = document.querySelector('canvas.bg-animation');
     canvasElement.width = window.outerWidth;
     canvasElement.height = window.outerHeight;
@@ -12,7 +12,7 @@
     canvas.font = '16pt sans-serif';
     canvas.fillStyle = 'rgba(255, 255, 255, 0.02)';
     newOrb = function() {
-      orbs.push({
+      return orbs.push({
         x: window.innerWidth + 100,
         y: Math.random() * window.innerHeight,
         size: Math.random() + 0.2,
@@ -24,25 +24,28 @@
       sineOffset = Math.sin(currentTime / 1000 + orb.offset) * 20;
       canvas.beginPath();
       canvas.arc(orb.x, orb.y + sineOffset, 80 * orb.size, 0, Math.PI * 2);
-      canvas.fill();
+      return canvas.fill();
     };
     update = function(delta) {
-      if ((orbTimer = orbTimer - delta) <= 0) {
-        orbTimer += orbStartTime;
+      orbTimer -= delta;
+      while (orbTimer <= 0) {
+        orbTimer = orbStartTime;
         newOrb();
       }
-      orbs = orbs.filter(function(orb) {
+      return orbs = orbs.filter(function(orb) {
         orb.x -= 100 * delta * orb.size;
         return orb.x > -100;
       });
     };
     draw = function() {
-      var j, len, orb;
+      var i, len, orb, results;
       canvas.clearRect(0, 0, window.outerWidth, window.outerHeight);
-      for (j = 0, len = orbs.length; j < len; j++) {
-        orb = orbs[j];
-        drawOrb(orb);
+      results = [];
+      for (i = 0, len = orbs.length; i < len; i++) {
+        orb = orbs[i];
+        results.push(drawOrb(orb));
       }
+      return results;
     };
     animationLoop = function() {
       var delta;
@@ -52,15 +55,13 @@
         update(delta);
         draw();
       }
-      window.requestAnimationFrame(animationLoop);
+      return window.requestAnimationFrame(animationLoop);
     };
-    for (i = j = 1; j <= 250; i = ++j) {
-      update(0.1);
+    while ((orbs[0] == null) || orbs[0].x > 0) {
+      update(0.05);
     }
     draw();
-    animationLoop();
+    return animationLoop();
   });
 
 }).call(this);
-
-//# sourceMappingURL=bg-animation.js.map

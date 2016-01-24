@@ -1,4 +1,4 @@
-# out: projects.js, sourcemap: true
+# out: projects.js
 
 selector = (str) -> document.body.querySelector str
 
