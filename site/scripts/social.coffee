@@ -2,10 +2,10 @@
 
 links = [
   # [ name, fa icon, url ]
-  ['GitHub', 'github', 'https://github.com/Kingdaro']
+  ['YouTube', 'youtube', 'https://youtube.com/Kingdaro557']
   ['Twitter', 'twitter', 'https://twitter.com/KingdaroBL']
   ['SoundCloud', 'soundcloud', 'https://soundcloud.com/kingdaro']
-  ['YouTube', 'youtube', 'https://youtube.com/Kingdaro557']
+  ['GitHub', 'github', 'https://github.com/Kingdaro']
 ]
 
 window.addEventListener 'load', ->
