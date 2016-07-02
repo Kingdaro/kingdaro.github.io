@@ -1,0 +1,3 @@
+[submodule "fchat"]
+	path = fchat
+	url = ../fchat
