@@ -12,12 +12,15 @@
     <main>
       <h2>hi! i'm kingdaro, and i do things sometimes</h2>
       <p>
-        i'm a nerd who likes to code, watch anime, play rhythm games, and sometimes produce music. i like to spend free time contributing to open source, helping out people in discord, or whatever i feel like doing! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
+        i'm a nerd who likes to code, watch anime, play rhythm games, and sometimes produce music. i like to spend free time contributing
+        to open source, helping out people in discord, or whatever i feel like doing!
+        <span class="emoji">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</span>
       </p>
       <p>have some links</p>
       <ul>
         <li>
-          <a href="https://twitter.com/kingdaro_">twitter</a> <span class="subtle" >(contact me here!)</span>
+          <a href="https://twitter.com/kingdaro_">twitter</a>
+          <span class="subtle">(contact me here!)</span>
         </li>
         <li>
           <a href="https://github.com/kingdaro">github</a>
@@ -26,7 +29,8 @@
           <a href="https://soundcloud.com/kingdaro">soundcloud</a>
         </li>
         <li>
-          <a href="https://www.youtube.com/kingdaro">youtube</a> <span class="subtle" >(i don't use it much though)</span>
+          <a href="https://www.youtube.com/kingdaro">youtube</a>
+          <span class="subtle">(i don't use it much though)</span>
         </li>
       </ul>
       <p>
@@ -38,6 +42,9 @@
         </li>
         <li>
           <a href="https://github.com/kingdaro/super-mario-typescript">super mario bros written in TypeScript</a>
+        </li>
+        <li>
+          other stuff, coming soon... <span class="emoji">(´・◡ ・｀)</span>
         </li>
       </ul>
     </main>
@@ -56,7 +63,7 @@
 
     main {
       max-width: 1200px;
-      padding: 30px;
+      padding: 20px;
       margin: auto;
     }
 
@@ -82,6 +89,11 @@
     .subtle {
       font-style: italic;
       opacity: 0.5;
+    }
+
+    /* make these inline-block so they don't break on word wrapping */
+    .emoji {
+      display: inline-block;
     }
   </style>
 </html>
