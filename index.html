@@ -7,13 +7,17 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:300" rel="stylesheet">
     <title>(◕‿◕✿)</title>
   </head>
+
   <body>
     <main>
       <h2>hi! i'm kingdaro, and i do things sometimes</h2>
+      <p>
+        i'm a nerd who likes to code, watch anime, play rhythm games, and sometimes produce music. i like to spend free time contributing to open source, helping out people in discord, or whatever i feel like doing! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
+      </p>
       <p>have some links</p>
       <ul>
         <li>
-          <a href="https://twitter.com/kingdaro_">twitter</a>
+          <a href="https://twitter.com/kingdaro_">twitter</a> <span class="subtle" >(contact me here!)</span>
         </li>
         <li>
           <a href="https://github.com/kingdaro">github</a>
@@ -22,16 +26,23 @@
           <a href="https://soundcloud.com/kingdaro">soundcloud</a>
         </li>
         <li>
-          <a href="https://www.youtube.com/kingdaro">youtube (i don't use it much though)</a>
+          <a href="https://www.youtube.com/kingdaro">youtube</a> <span class="subtle" >(i don't use it much though)</span>
         </li>
       </ul>
       <p>
-        also check out this totally gnarly
-        <a href="./trello">trello clone</a>
-        i made
+        also check out some stuff i made:
       </p>
+      <ul>
+        <li>
+          <a href="./trello">an awesome-looking minimal trello clone</a>
+        </li>
+        <li>
+          <a href="https://github.com/kingdaro/super-mario-typescript">super mario bros written in TypeScript</a>
+        </li>
+      </ul>
     </main>
   </body>
+
   <style>
     * {
       box-sizing: border-box;
@@ -45,15 +56,17 @@
 
     main {
       max-width: 1200px;
+      padding: 30px;
       margin: auto;
     }
 
     a {
-      color: inherit;
+      color: hsl(204, 83%, 67%);
+      text-decoration: none;
     }
 
     a:hover {
-      color: hsl(204, 73%, 58%);
+      text-decoration: underline;
     }
 
     h1,
@@ -64,6 +77,11 @@
     h6 {
       font: 'Roboto Condensed', sans-serif;
       font-weight: 300;
+    }
+
+    .subtle {
+      font-style: italic;
+      opacity: 0.5;
     }
   </style>
 </html>
