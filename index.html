@@ -71,4 +71,13 @@
       </ul>
     </main>
   </body>
+
+  <script>
+    // make all of the links open in a new tab
+    // this is the laziest thing ever don't do this
+    document.querySelectorAll('body a[href]').forEach(el => {
+      el.target = '_blank'
+      el.rel = 'noopener'
+    })
+  </script>
 </html>
